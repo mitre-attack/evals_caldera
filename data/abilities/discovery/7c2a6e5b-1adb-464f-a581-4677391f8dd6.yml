@@ -9,6 +9,6 @@
     name: System Information Discovery
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c net config workstation
+          net config workstation

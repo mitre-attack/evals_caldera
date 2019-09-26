@@ -9,6 +9,6 @@
     name: System Network Connections Discovery
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c netstat -ano
+          netstat -ano

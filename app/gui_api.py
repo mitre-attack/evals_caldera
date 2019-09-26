@@ -1,7 +1,7 @@
 from aiohttp_jinja2 import template
 
 
-class GuiApi:
+class EvalsApi:
 
     def __init__(self, services):
         self.auth_svc = services.get('auth_svc')

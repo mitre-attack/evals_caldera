@@ -9,6 +9,6 @@
     name: Account Discovery
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c net user %USERNAME% /domain
+          net user %USERNAME% /domain

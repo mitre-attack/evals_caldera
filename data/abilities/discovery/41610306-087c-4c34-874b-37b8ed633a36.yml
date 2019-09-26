@@ -9,6 +9,6 @@
     name: Process Discovery
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c tasklist /v
+          tasklist /v

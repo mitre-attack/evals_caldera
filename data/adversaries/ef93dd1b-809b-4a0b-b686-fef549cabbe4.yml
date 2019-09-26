@@ -3,6 +3,7 @@
 id: ef93dd1b-809b-4a0b-b686-fef549cabbe4
 name: ATT&CK Eval APT3 - Full
 description: full evaluation
+visible: 1
 phases:
   1:
     - ee08a427-1e1d-4d8a-aeb1-978a7fcf9087 # 2.A.1

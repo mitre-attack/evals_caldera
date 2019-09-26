@@ -9,6 +9,6 @@
     name: Permission Groups Discovery
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c net localgroup administrators
+          net localgroup administrators

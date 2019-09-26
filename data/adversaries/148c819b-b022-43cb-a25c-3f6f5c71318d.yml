@@ -3,6 +3,7 @@
 id: 148c819b-b022-43cb-a25c-3f6f5c71318d
 name: ATT&CK Eval APT3 - 8.D-9.B
 description: Collection and Exfiltration
+visible: 1
 phases:
   1:
     - 0b1841bd-ef8b-475c-bce7-8fcb2860984a

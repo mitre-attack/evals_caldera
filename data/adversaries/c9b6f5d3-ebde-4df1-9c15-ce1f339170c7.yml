@@ -3,6 +3,7 @@
 id: c9b6f5d3-ebde-4df1-9c15-ce1f339170c7
 name: ATT&CK Eval APT3 - 4-5.A
 description: Discovery for Lateral Movement and Credential Access
+visible: 1
 phases:
   1:
     - 59592c35-8207-4896-8d8b-36ad4600245d

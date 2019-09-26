@@ -9,6 +9,6 @@
     name: Query Registry
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+          reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System

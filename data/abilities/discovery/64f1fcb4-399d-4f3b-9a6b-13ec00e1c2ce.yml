@@ -9,6 +9,6 @@
     name: System Network Configuration Discovery
   platforms:
     windows:
-      psh,pwsh:
+      cmd:
         command: |
-          cmd.exe /c arp -a
+          arp -a

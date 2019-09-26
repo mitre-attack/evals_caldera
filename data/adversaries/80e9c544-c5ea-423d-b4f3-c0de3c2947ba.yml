@@ -3,6 +3,7 @@
 id: 80e9c544-c5ea-423d-b4f3-c0de3c2947ba
 name: ATT&CK Eval APT3 - 2-3.A
 description: Initial Discovery and Privilege Escalation
+visible: 1
 phases:
   1:
     - ee08a427-1e1d-4d8a-aeb1-978a7fcf9087
