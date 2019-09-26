@@ -1,0 +1,16 @@
+---
+
+- id: 4b2e9574-b1a7-4b38-95b2-6054ded9c4fe
+  name: >-
+    10.A.1 – Registry Run Key / Startup Folder (T1060) from 1.B,
+    10.A.2 – Scheduled Task (T1053) from 7.C
+  description: 
+  tactic: execution
+  technique:
+    attack_id: T1086
+    name: PowerShell
+  platforms:
+    windows:
+      psh,pwsh:
+        command: |
+          Restart-Computer -Force

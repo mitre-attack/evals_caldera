@@ -1,0 +1,96 @@
+<html>
+  <head>
+      <title>ATT&CK | Evals</title>
+      <link rel="shortcut icon" type="image/png" href="/gui/img/favicon.png"/>
+      <link rel="stylesheet" href="/gui/css/shared.css">
+      <link rel="stylesheet" href="/gui/css/navbar.css">
+      <link rel="stylesheet" href="/chain/css/basic.css">
+      <link rel="stylesheet" href="/chain/css/modal.css">
+      <link rel="stylesheet" href="/chain/css/tabs.css">
+      <link rel="stylesheet" href="/chain/css/timeline.css">
+      <link rel="stylesheet" href="/evals/css/evals.css">
+  </head>
+  <body>
+  <div style="margin-bottom: 100px; text-align: center;">
+      <div class="topnav">
+        <a href="/">Home</a>
+          {% for plugin in plugins %}
+            {% if plugin.address %}
+              <a href="{{ plugin.address }}">{{ plugin.name}}</a>
+            {% endif %}
+          {% endfor %}
+        <div class="topnav-right">
+          <a href="https://github.com/mitre/caldera/wiki" target="_blank">Docs</a>
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+      <div>
+        <div class="row-canvas">
+          <div class="section-profile">
+            <div class="big-head">
+              <a href="https://attackevals.mitre.org" target="_blank"><h1>ATT&CK | Evals</h1></a>
+            </div>
+{#            <div class="body" style="text-align: center;">#}
+{#              <p style="text-align: center; ">#}
+{#                  ATT&CK Evaluations Round 1 uses an Operational Flow to describe the#}
+{#                  logical ordering to which procedures take place during the evaluation.#}
+{#                  <a href="https://attackevals.mitre.org/methodology/round1/operational-flow.html"  target="_blank">#}
+{#                      Round 1 Operational Flow</a>#}
+{#              </p>#}
+{#            </div>#}
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center">
+        <div class="row" style="width: 70%; display: inline-block; margin-top: 0px;">
+          <div class="section-profile">
+            <h2 style="color: white">Initial Compromise</h2>
+            <div>
+              <p>Manually execute the Remote Access Tool (RAT) on target
+                  machine (see <a href="/plugin/sandcat/gui">Sandcat</a>). Automated delivery is out of
+                  scope of this exercise and must be executed manually. Once this is completed, begin the
+                  evaluation by starting the 'ATT&CK Eval APT3' operation using Chain mode and include the
+                  <i>*evals*</i> fact sheet (see <a href="/plugin/chain/gui">Chain</a>).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <ul id="timeline" class="timeline" style="margin-left: 3em;">
+          {% for step in steps %}
+            <li id="eval_step_{{ step.id }}" class="event cyan" data-date="">
+              <div class="member-infos">
+                <h1 id="time-tactic" class="member-title">
+                    <div class='step-name' style="font-size: 13px;font-weight:100" onclick="rollup({{ step.id }})">
+                        {{ step.name }}
+                    </div></h1>
+                <div id="inner-contents" style="display: none;">
+                  <div id="decision-card" class="decision-card" >
+                    <table style="border-spacing:15px;">
+                      <tr>
+                        <td>Description:</td>
+                        <td><p id="link-description" class="member-result">{{ step.description }}</p></td>
+                      </tr>
+                      <tr>
+                        <td>Tactic:</td>
+                        <td><div class="tooltip" id="link-technique">{{ step.tactic.capitalize() }}</div></td>
+                      </tr>
+                      <tr>
+                        <td>Technique:</td>
+                        <td><div class="tooltip" id="link-technique">({{ step.technique_id }}) {{ step.technique_name }}</div></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script src="/gui/js/shared.js"></script>
+  <script src="/gui/jquery/jquery.js"></script>
+  <script src="/evals/js/overview.js"></script>
+</html>

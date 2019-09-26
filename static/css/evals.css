@@ -1,0 +1,7 @@
+a {
+    color: cyan;
+}
+
+.timeline .cyan:after {
+  box-shadow: 0 0 0 0.2em cyan;
+}
