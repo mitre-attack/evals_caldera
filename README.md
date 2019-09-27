@@ -12,12 +12,12 @@ For more information see https://attackevals.mitre.org/about-attack-evaluations.
 ## Installation
 Clone the Eval plugin into the caldera/plugin directory
 ```commandline
-git clone https://github.com/mitre/evals.git
+git clone https://github.com/mitre-attack/evals_caldera.git
 ```
 Add Eval plugin to CALDERA config `conf/local.yml`
 ```yaml
 plugins:
-  - evals
+  - evals_caldera
 ```
 
 Fill out facts in `data/facts/` specific to your setup.
