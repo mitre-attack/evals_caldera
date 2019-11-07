@@ -1,6 +1,3 @@
-import logging
-import traceback
-
 from aiohttp_jinja2 import template
 
 class EvalsApi:
@@ -23,7 +20,6 @@ class EvalsApi:
         eval_full = 'ef93dd1b-809b-4a0b-b686-fef549cabbe4'
         # adversary = (await self.data_svc.explode_adversaries(criteria=dict(adversary_id=eval_full)))[0]
         adversary = (await self.data_svc.locate('adversaries', dict(adversary_id=eval_full)))[0]
-        logging.debug(type(adversary))
         all_steps = []
         for phase, steps in adversary.phases.items():
             all_steps.extend(steps)
