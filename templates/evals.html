@@ -12,17 +12,7 @@
   </head>
   <body>
   <div style="margin-bottom: 100px; text-align: center;">
-      <div class="topnav">
-        <a href="/">Home</a>
-          {% for plugin in plugins %}
-            {% if plugin.address %}
-              <a href="{{ plugin.address }}">{{ plugin.name}}</a>
-            {% endif %}
-          {% endfor %}
-        <div class="topnav-right">
-          <a href="https://github.com/mitre/caldera/wiki" target="_blank">Docs</a>
-          <a href="/logout">Logout</a>
-        </div>
+      <div class="navbar plugin"></div>
       </div>
       <div>
         <div class="row-canvas">
@@ -74,7 +64,7 @@
                       </tr>
                       <tr>
                         <td>Tactic:</td>
-                        <td><div class="tooltip" id="link-technique">{{ step.tactic.capitalize() }}</div></td>
+                        <td><div class="tooltip" id="link-tactic">{{ step.tactic.capitalize() }}</div></td>
                       </tr>
                       <tr>
                         <td>Technique:</td>
@@ -90,7 +80,7 @@
       </div>
     </div>
   </body>
-  <script src="/gui/js/shared.js"></script>
   <script src="/gui/jquery/jquery.js"></script>
+  <script src="/gui/js/shared.js"></script>
   <script src="/evals/js/overview.js"></script>
 </html>

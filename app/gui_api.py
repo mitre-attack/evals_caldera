@@ -15,8 +15,6 @@ class EvalsApi:
     @template('evals.html')
     async def splash(self, request):
         await self.auth_svc.check_permissions(request)
-        plugins = [dict(name=getattr(p, 'name'), address=getattr(p, 'address')) for p in self.app_svc.get_plugins()]
-
         eval_full = 'ef93dd1b-809b-4a0b-b686-fef549cabbe4'
         # adversary = (await self.data_svc.explode_adversaries(criteria=dict(adversary_id=eval_full)))[0]
         adversary = (await self.data_svc.locate('adversaries', dict(adversary_id=eval_full)))[0]
@@ -26,4 +24,4 @@ class EvalsApi:
         all_steps = list({v.name: v for v in all_steps}.values())
         all_steps = sorted(all_steps, key=lambda i: self.sort_name(i.name))
 
-        return dict(plugins=plugins, adversary=adversary, steps=all_steps)
+        return dict(adversary=adversary, steps=all_steps)
