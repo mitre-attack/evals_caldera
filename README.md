@@ -31,4 +31,4 @@ Minimum requirements:
 
 ## Execution
 
-Please read the [full documentation](https://github.com/mitre/caldera/wiki/Plugins-evals) for this plugin.
+Please read the [full documentation](https://caldera.readthedocs.io/en/latest/Plugins-evals.html) for this plugin.
