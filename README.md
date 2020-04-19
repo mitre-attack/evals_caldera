@@ -14,13 +14,13 @@ Clone the Eval plugin into the caldera/plugin directory
 ```commandline
 git clone https://github.com/mitre-attack/evals_caldera.git
 ```
-Add Eval plugin to CALDERA config `conf/local.yml`
+Add Eval plugin to CALDERA config `conf/default.yml`
 ```yaml
 plugins:
   - evals_caldera
 ```
 
-Fill out facts in `data/facts/` specific to your setup.
+Fill out facts in `data/sources/` specific to your setup.
 
 ## Environment Setup
 [Full Round 1 Environment](https://attackevals.mitre.org/methodology/round1/environment.html)
