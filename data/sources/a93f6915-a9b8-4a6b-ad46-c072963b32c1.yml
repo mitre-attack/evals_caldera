@@ -7,3 +7,4 @@ facts:
     value: \\VBOXSVR\Resume_Viewer
   - trait: remote.file.name
     value: Resume.pdf
+rules: {}
