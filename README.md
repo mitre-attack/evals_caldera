@@ -32,3 +32,7 @@ Minimum requirements:
 ## Execution
 
 Please read the [full documentation](https://github.com/mitre/caldera/wiki/Plugins-evals) for this plugin.
+
+## Contributors
+
+Cisco Talos - Ported evals_caldera to Caldera 2.6.6
